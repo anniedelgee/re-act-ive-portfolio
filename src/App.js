@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import TodoList from './ToDoList';
+import navigation from '../components/navigaton';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <NavTabs />
+        {/* Wrap Route elements in a Routes component */}
+        <Routes>
+          {/* Define routes using the Route component to render different page components at different paths */}
+          {/* Define a default route that will render the Home component */}
+          <Route path="/" element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="blog" element={<Blog />} />
+          {/* Define a route that will have descendant routes */}
+          <Route path="contact/*" element={<Contact />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
+
 
 export default App;
