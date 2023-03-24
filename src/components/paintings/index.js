@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function ToDoList(){
+function ToDoList(){
     return (
         <div>
             hellooooooo cyberspace, this is tHEEEE one and 0Nly annidelgee
@@ -8,3 +8,4 @@ export default function ToDoList(){
         </div>
     )
 }
+export default ToDoList;
